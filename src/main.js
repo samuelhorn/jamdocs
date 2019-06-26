@@ -5,8 +5,11 @@ import DefaultLayout from '~/layouts/Default.vue'
 import '~/assets/scss/globals.scss'
 import 'prismjs/themes/prism.css'
 import("prismjs/themes/prism-okaidia.css")
+import Vuex from 'vuex'
 
-export default function (Vue, { router, head, isClient }) {
+export default function (Vue, { router, head, isClient, appOptions }) {
+  Vue.use(Vuex)
+
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
@@ -16,6 +19,24 @@ export default function (Vue, { router, head, isClient }) {
   // Load font css
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap'
+    href: 'https://use.typekit.net/qfe7lgs.css'
+  })
+
+  // State
+  appOptions.store = new Vuex.Store({
+    state: {
+      sidebarOpen: true
+    },
+    mutations: {
+      toggleSidebar (state) {
+        state.sidebarOpen = !state.sidebarOpen
+      },
+      closeSidebar (state) {
+        state.sidebarOpen = false
+      },
+      openSidebar (state) {
+        state.sidebarOpen = true
+      }
+    }
   })
 }

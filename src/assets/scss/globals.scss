@@ -1,13 +1,14 @@
 @import 'config/colors';
 @import 'config/maps';
 @import 'config/mixins';
+@import 'config/functions';
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: canada-type-gibson, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.7;
@@ -36,4 +37,29 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+
+  @include respond-above(md) {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  padding-top: 100px;
+  margin-top: -80px;
+
+  @include respond-above(md) {
+    font-size: 2rem;
+  }
 }

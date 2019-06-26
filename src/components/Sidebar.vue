@@ -1,6 +1,5 @@
 <template>
-  <transition name="menu">
-    <aside v-if="open" class="sidebar">
+    <aside class="sidebar" :class="{'sidebar--open' : this.$store.state.sidebarOpen}">
       <nav>
         <ul>
           <li class="section" v-for="{ node } in $static.menu.edges" :key="node.id">
@@ -19,7 +18,6 @@
         </ul>
       </nav>
     </aside>
-  </transition>
 </template>
 
 <static-query>
@@ -51,12 +49,6 @@ query Menu {
 
 <script>
 export default {
-  props: {
-    open: {
-      type: Boolean,
-      required: true
-    }
-  },
   methods: {
     checkAnchors(slug, item) {
       if (slug == item) {
@@ -69,24 +61,34 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out, transform .15s ease-in-out, border-color .15s linear;
   padding: 100px 30px 30px;
   width: 300px;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: 9;
+  will-change: transform;
+  transform: translateX(-300px);
+  border-right: 1px solid transparent;
 
   @include respond-above(sm) {
-    width: 300px;
+    transform: translateX(0);
+  }
+
+  &--open {
+    transform: translateX(0);
   }
   
   .bright & {
     background: $sidebarBright;
+    border-color: shade($sidebarBright, 10%);
   }
 
   .dark & {
     background: $sidebarDark;
+    border-color: shade($sidebarDark, 40%);
   }
 }
 
@@ -116,15 +118,18 @@ a {
   font-size: 12px;
   margin-bottom: 20px;
   opacity: .3;
+  letter-spacing: .15em;
+  font-weight: 600;
 }
 
 .topic {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .sub-topic {
   font-size: .875rem;
   position: relative;
+  opacity: .8;
 
   &::after {
     content: '';
@@ -145,13 +150,6 @@ a {
       opacity: 1;
     }
   }
-}
-
-.menu-enter-active, .menu-leave-active {
-  transition: transform .15s ease-in-out;
-}
-.menu-enter, .menu-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  transform: translateX(-100%);
 }
 </style>
 

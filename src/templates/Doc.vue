@@ -3,7 +3,7 @@
     <h1>
       {{ $page.doc.title }}
     </h1>
-     <div v-html="$page.doc.content" />
+     <div class="markdown" v-html="$page.doc.content" />
   </Layout>
 </template>
 
@@ -22,13 +22,22 @@ query Doc ($path: String!) {
 
 <script>
 export default {
+  metaInfo() {
+    return {
+      title: this.$page.doc.title
+    }
+  }
 }
 </script>
 
 
 <style lang="scss" scoped>
-h1 {
-  margin-top: 0;
+/deep/ > p {
+  opacity: .8;
+}
+
+.markdown {
+  padding-bottom: 50vh;
 }
 </style>
 

@@ -1,12 +1,12 @@
 <template>
-  <button @click="toggleMenu()" class="toggle">
+  <button @click="toggleSidebar()" class="toggle">
     <transition name="toggle">
-      <svg v-if="!menuOpen" class="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <svg v-if="!this.$store.state.sidebarOpen" class="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12L21 12M3 6L21 6M3 18L21 18"/>
       </svg>
     </transition>
     <transition name="toggle">
-      <svg v-if="menuOpen" class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <svg v-if="this.$store.state.sidebarOpen" class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6L18 18"/>
       </svg>
     </transition>
@@ -14,30 +14,11 @@
 </template>
 
 <script>
-import throttle from 'lodash/throttle'
-
 export default {
-  data() {
-    return {
-      menuOpen: false
-    }
-  },
   methods: {
-    toggleMenu: function(event) {
-      this.$emit('toggled', 'true')
-      this.menuOpen = !this.menuOpen
-    },
-    pageSize: function() {
-      if (window.getComputedStyle(document.body, ':before').content == '"large"') {
-        this.menuOpen = true
-      } else {
-        this.menuOpen = false
-      }
-    },
-  },
-  mounted () {
-    this.pageSize()
-    window.addEventListener('resize', throttle(this.pageSize, 200))
+    toggleSidebar: function() {
+      this.$store.commit('toggleSidebar')
+    }
   }
 }
 </script>
