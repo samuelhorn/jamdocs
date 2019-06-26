@@ -11,8 +11,6 @@
         </g-link>
       </strong>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
         <ThemeSwitch />
       </nav>
     </header>
@@ -92,13 +90,10 @@ export default {
   max-width: 1000px;
 }
 
-.nav__link {
-  margin-left: 20px;
-}
-
 .logo {
   height: 40px;
   display: block;
+  transition: color .15s ease-in-out;
 
   svg {
     height: 100%;
