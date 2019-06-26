@@ -71,14 +71,14 @@ export default {
     this.stateFromSize()
   },
   mounted() {
-    window.addEventListener('scroll', throttle(this.handleScroll, 200))
+    window.addEventListener('scroll', throttle(this.handleScroll, 50))
     window.addEventListener('resize', throttle(this.stateFromSize, 200))
   },
   beforeUpdate () {
-    window.removeEventListener('scroll', throttle(this.handleScroll, 200))
+    window.removeEventListener('scroll', throttle(this.handleScroll, 50))
   },
   updated () {
-    window.addEventListener('scroll', throttle(this.handleScroll, 200))
+    window.addEventListener('scroll', throttle(this.handleScroll, 50))
   }
 }
 </script>

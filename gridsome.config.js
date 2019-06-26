@@ -17,6 +17,11 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Jamdocs',
+  chainWebpack: config => {
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))
+    config.mode('development')
+  },
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -31,9 +36,6 @@ module.exports = {
         }
       }
     }
-  ],
-  chainWebpack: config => {
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-    types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))
-  }
+  ]
 }
+
