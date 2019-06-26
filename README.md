@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/91c5d1e9-fd76-42b8-9beb-ffba302743ef/deploy-status)](https://app.netlify.com/sites/pedantic-blackwell-8fbcb7/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/de44d168-eb1d-47a5-8731-d77bb40af7c8/deploy-status)](https://app.netlify.com/sites/jamdocs/deploys)
 
 # ![Jamdocs](https://github.com/samuelhorn/jamdocs/blob/master/src/assets/img/logo.svg)
 
