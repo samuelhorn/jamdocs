@@ -1,23 +1,25 @@
 <template>
-  <aside class="sidebar">
-    <nav>
-      <ul>
-        <li class="section" v-for="{ node } in $static.menu.edges" :key="node.id">
-          <h3 class="section-title">{{node.section}}</h3>
-          <ul>
-            <li v-for="item in node.topics" :key="item.title">
-              <g-link class="topic" :to="item.slug">{{item.title}}</g-link>
-              <ul v-if="checkAnchors(node.slug, item.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
-                <li v-for="heading in node.headings" :key="heading.value">
-                  <a class="sub-topic" :href="item.slug + heading.anchor">{{heading.value}}</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </aside>
+  <transition name="menu">
+    <aside v-if="open" class="sidebar">
+      <nav>
+        <ul>
+          <li class="section" v-for="{ node } in $static.menu.edges" :key="node.id">
+            <h3 class="section-title">{{node.section}}</h3>
+            <ul>
+              <li v-for="item in node.topics" :key="item.title">
+                <g-link class="topic" :to="item.slug">{{item.title}}</g-link>
+                <ul v-if="checkAnchors(node.slug, item.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
+                  <li v-for="heading in node.headings" :key="heading.value">
+                    <a class="sub-topic" :href="item.slug + heading.anchor">{{heading.value}}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </transition>
 </template>
 
 <static-query>
@@ -49,6 +51,12 @@ query Menu {
 
 <script>
 export default {
+  props: {
+    open: {
+      type: Boolean,
+      required: true
+    }
+  },
   methods: {
     checkAnchors(slug, item) {
       if (slug == item) {
@@ -68,6 +76,10 @@ export default {
   top: 0;
   bottom: 0;
   left: 0;
+
+  @include respond-above(sm) {
+    width: 300px;
+  }
   
   .bright & {
     background: $sidebarBright;
@@ -133,6 +145,13 @@ a {
       opacity: 1;
     }
   }
+}
+
+.menu-enter-active, .menu-leave-active {
+  transition: transform .15s ease-in-out;
+}
+.menu-enter, .menu-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-100%);
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="header">
+    <header class="header" :class="{'header--scrolled' : pageScrolled}">
       <strong>
         <g-link to="/" class="logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="225" height="52" viewBox="0 0 225 52">
@@ -12,9 +12,10 @@
       </strong>
       <nav class="nav">
         <ThemeSwitch />
+        <MenuToggle @toggled="onMenuToggle" />
       </nav>
     </header>
-    <Sidebar/>
+    <Sidebar :open="menuState" />
     <main class="main">
       <slot/>
     </main>
@@ -32,17 +33,39 @@ query {
 <script>
 import Sidebar from '~/components/Sidebar.vue'
 import ThemeSwitch from '~/components/ThemeSwitch.vue'
+import MenuToggle from '~/components/MenuToggle.vue'
 import throttle from 'lodash/throttle'
 
 export default {
   components: {
     Sidebar,
-    ThemeSwitch
+    ThemeSwitch,
+    MenuToggle
+  },
+  data() {
+    return {
+      menuState: false,
+      pageScrolled: false
+    }
   },
   methods: {
-    handleScroll: throttle(() => {
+    pageSize: function() {
+      if (window.getComputedStyle(document.body, ':before').content == '"large"') {
+        this.menuState = true
+      } else {
+        this.menuState = false
+      }
+    },
+    onMenuToggle: function(value) {
+      this.menuState = !this.menuState
+    },
+    handleScroll: function() {
       let mainNavLinks = document.querySelectorAll('.topic.active + ul .sub-topic')
       let fromTop = window.scrollY
+
+      if ((fromTop > 0 && this.pageScrolled == false) || (fromTop == 0 && this.pageScrolled == true)) {
+        this.pageScrolled = !this.pageScrolled
+      }
 
       mainNavLinks.forEach(link => {
         let section = document.querySelector(link.hash)
@@ -57,20 +80,22 @@ export default {
           link.classList.remove('current')
         }
       })
-    }, 100)
+    }
   },
   mounted () {
-    window.addEventListener('scroll', this.handleScroll)
+    const main = document.querySelector('.main')
+    this.pageSize()
+    window.addEventListener('scroll', throttle(this.handleScroll, 200))
+    window.addEventListener('resize', throttle(this.pageSize, 200))
   },
   beforeUpdate () {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', throttle(this.handleScroll, 200))
   },
   updated () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', throttle(this.handleScroll, 200))
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 .header {
@@ -83,11 +108,35 @@ export default {
   left: 0;
   z-index: 10;
   padding: 30px;
+  transition: padding .15s linear, background .15s linear;
+  will-change: padding, background;
+
+  &--scrolled {
+    @include respond-below(sm) {
+      padding: 10px 30px;
+
+      .dark & {
+        background: $sidebarDark;
+      }
+
+      .bright & {
+        background: $sidebarBright;
+      }
+    }
+  }
 }
 
 .main {
-  padding: 100px 30px 30px 340px;
-  max-width: 1000px;
+  padding: 140px 30px 30px 30px;
+  max-width: 1200px;
+
+  @include respond-above(sm) {
+    padding: 100px 30px 30px 330px;
+  }
+
+  @include respond-above(md) {
+    padding: 100px 80px 30px 380px;
+  }
 }
 
 .logo {
@@ -107,5 +156,9 @@ export default {
   .bright & {
     color: $textBright;
   }
+}
+
+nav {
+  display: flex;
 }
 </style>
