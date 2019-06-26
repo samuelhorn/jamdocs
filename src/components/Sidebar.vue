@@ -1,0 +1,139 @@
+<template>
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li class="section" v-for="{ node } in $static.menu.edges" :key="node.id">
+          <h3 class="section-title">{{node.section}}</h3>
+          <ul>
+            <li v-for="item in node.topics" :key="item.title">
+              <g-link class="topic" :to="item.slug">{{item.title}}</g-link>
+              <ul v-if="checkAnchors(node.slug, item.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
+                <li v-for="heading in node.headings" :key="heading.value">
+                  <a class="sub-topic" :href="item.slug + heading.anchor">{{heading.value}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</template>
+
+<static-query>
+query Menu {
+  menu: allMenu(order:ASC) {
+    edges {
+      node {
+        section
+        topics {
+          title
+          slug
+        }
+      }
+    }
+  }
+  docs: allDoc {
+    edges {
+      node {
+        slug
+        headings {
+          value
+          anchor
+        }
+      }
+    }
+  }
+}
+</static-query>
+
+<script>
+export default {
+  methods: {
+    checkAnchors(slug, item) {
+      if (slug == item) {
+        return true
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.sidebar {
+  transition: background .15s ease-in-out;
+  padding: 100px 30px 30px;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  
+  .bright & {
+    background: $sidebarBright;
+  }
+
+  .dark & {
+    background: $sidebarDark;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 0;
+  display: block;
+
+  &.active {
+    color: $brandPrimary;
+  }
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 20px;
+  opacity: .3;
+}
+
+.topic {
+  font-weight: 700;
+}
+
+.sub-topic {
+  font-size: .875rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    transition: opacity .25s ease-in-out;
+    width: 6px;
+    height: 6px;
+    background: $brandPrimary;
+    border-radius: 100%;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 13px;
+    left: -15px;
+  }
+
+  &.current {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+</style>
+
+

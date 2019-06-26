@@ -1,0 +1,20 @@
+[
+  {
+    "section": "Introduction",
+    "topics": [
+      {
+        "title": "Getting started",
+        "slug": "getting-started"
+      }
+    ]
+  },
+  {
+    "section": "Setup",
+    "topics": [
+      {
+        "title": "Theme configuration",
+        "slug": "theme-configuration"
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+@import 'config/colors';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  transition: background .15s ease-in-out, color .15s ease-in-out;
+
+  &.bright {
+    background: $backgroundBright;
+    color: $textBright;
+  }
+
+  &.dark {
+    background: $backgroundDark;
+    color: $textDark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
