@@ -26,25 +26,8 @@ export default {
     Header,
     Sidebar
   },
-  watch: {
-    '$route' () {
-      this.$store.commit('closeSidebar')
-    }
-  },
-  methods: {
-    stateFromSize: function() {
-      if (window.getComputedStyle(document.body, ':before').content == '"small"') {
-        this.$store.commit('closeSidebar')
-      } else {
-        this.$store.commit('openSidebar')
-      }
-    }
-  },
-  beforeMount () {
-    this.stateFromSize()
-  },
   mounted() {
-    //window.addEventListener('resize', throttle(this.stateFromSize, 200))
+    this.$store.commit('closeSidebar')
   }
 }
 </script>

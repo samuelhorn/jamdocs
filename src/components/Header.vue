@@ -33,13 +33,13 @@ export default {
     headerScroll: function() {
       let fromTop = window.scrollY
 
-      if ((fromTop > 10 && this.pageScrolled == false) || (fromTop <= 10 && this.pageScrolled == true)) {
+      if ((fromTop > 40 && this.pageScrolled == false) || (fromTop <= 40 && this.pageScrolled == true)) {
         this.pageScrolled = !this.pageScrolled
       }
     }
   },
   mounted() {
-    window.addEventListener('scroll', throttle(this.headerScroll, 50))
+    window.addEventListener('scroll', this.headerScroll)
   }
 }
 </script>

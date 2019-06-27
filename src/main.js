@@ -25,16 +25,16 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   // State
   appOptions.store = new Vuex.Store({
     state: {
-      sidebarOpen: true
+      sidebarOpen: false
     },
     mutations: {
-      toggleSidebar (state) {
+      toggleSidebar(state) {
         state.sidebarOpen = !state.sidebarOpen
       },
-      closeSidebar (state) {
+      closeSidebar(state) {
         state.sidebarOpen = false
       },
-      openSidebar (state) {
+      openSidebar(state) {
         state.sidebarOpen = true
       }
     }
