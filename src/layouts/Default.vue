@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :scroll="pageScrolled" />
+    <Header />
     <Sidebar />
     <main class="main">
       <slot/>
@@ -26,11 +26,6 @@ export default {
     Header,
     Sidebar
   },
-  data() {
-    return {
-      pageScrolled: false
-    }
-  },
   watch: {
     '$route' () {
       this.$store.commit('closeSidebar')
@@ -43,42 +38,13 @@ export default {
       } else {
         this.$store.commit('openSidebar')
       }
-    },
-    handleScroll: function() {
-      let mainNavLinks = document.querySelectorAll('.topic.active + ul .sub-topic')
-      let fromTop = window.scrollY
-
-      if ((fromTop > 10 && this.pageScrolled == false) || (fromTop <= 10 && this.pageScrolled == true)) {
-        this.pageScrolled = !this.pageScrolled
-      }
-
-      mainNavLinks.forEach(link => {
-        let section = document.querySelector(link.hash)
-        let allCurrent = document.querySelectorAll('.current'), i
-
-        if (section.offsetTop <= fromTop) {
-          for (i = 0; i < allCurrent.length; ++i) {
-            allCurrent[i].classList.remove('current')
-          }
-          link.classList.add('current')
-        } else {
-          link.classList.remove('current')
-        }
-      })
     }
   },
   beforeMount () {
     this.stateFromSize()
   },
   mounted() {
-    window.addEventListener('scroll', throttle(this.handleScroll, 50))
     //window.addEventListener('resize', throttle(this.stateFromSize, 200))
-  },
-  beforeUpdate () {
-    window.removeEventListener('scroll', throttle(this.handleScroll, 50))
-  },
-  updated () {
-    window.addEventListener('scroll', throttle(this.handleScroll, 50))
   }
 }
 </script>

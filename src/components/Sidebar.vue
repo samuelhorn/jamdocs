@@ -48,13 +48,36 @@ query Menu {
 </static-query>
 
 <script>
+import throttle from 'lodash/throttle'
+
 export default {
   methods: {
     checkAnchors(slug, item) {
       if (slug == item) {
         return true
       }
+    },
+    sidebarScroll: function() {
+      let mainNavLinks = document.querySelectorAll('.topic.active + ul .sub-topic')
+      let fromTop = window.scrollY
+
+      mainNavLinks.forEach(link => {
+        let section = document.querySelector(link.hash)
+        let allCurrent = document.querySelectorAll('.current'), i
+
+        if (section.offsetTop <= fromTop) {
+          for (i = 0; i < allCurrent.length; ++i) {
+            allCurrent[i].classList.remove('current')
+          }
+          link.classList.add('current')
+        } else {
+          link.classList.remove('current')
+        }
+      })
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', throttle(this.sidebarScroll, 50))
   }
 }
 </script>
