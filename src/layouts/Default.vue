@@ -48,7 +48,7 @@ export default {
       let mainNavLinks = document.querySelectorAll('.topic.active + ul .sub-topic')
       let fromTop = window.scrollY
 
-      if ((fromTop > 10 && this.pageScrolled == false) || (fromTop =< 10 && this.pageScrolled == true)) {
+      if ((fromTop > 10 && this.pageScrolled == false) || (fromTop <= 10 && this.pageScrolled == true)) {
         this.pageScrolled = !this.pageScrolled
       }
 
@@ -72,7 +72,7 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', throttle(this.handleScroll, 50))
-    //window.addEventListener('resize', throttle(this.stateFromSize, 200))
+    window.addEventListener('resize', throttle(this.stateFromSize, 200))
   },
   beforeUpdate () {
     window.removeEventListener('scroll', throttle(this.handleScroll, 50))
