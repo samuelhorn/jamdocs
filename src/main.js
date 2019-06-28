@@ -15,7 +15,13 @@ export default function (Vue, { router, head, isClient, appOptions }) {
 
   // Add attributes to HTML tag
   head.htmlAttrs = { lang: 'en' }
-  
+
+  // Load font css
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap'
+  })
+
   head.link.push({
     rel: 'manifest',
     href: '/manifest.json'
