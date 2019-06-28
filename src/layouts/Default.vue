@@ -19,7 +19,7 @@ query {
 <script>
 import Header from '~/components/Header.vue'
 import Sidebar from '~/components/Sidebar.vue'
-import throttle from 'lodash/throttle'
+import WebFontLoader from 'webfontloader'
 
 export default {
   components: {
@@ -35,6 +35,13 @@ export default {
           .then(function() { console.log("Service Worker Registered"); });
       }
     }
+  },
+  created() {
+    WebFontLoader.load({
+      google: {
+        families: ['Source+Sans+Pro:400,400i,700&display=swap']
+      }
+    });
   }
 }
 </script>

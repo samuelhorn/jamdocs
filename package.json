@@ -11,7 +11,8 @@
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
     "gridsome": "^0.6.0",
-    "vuex": "^3.1.1"
+    "vuex": "^3.1.1",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
