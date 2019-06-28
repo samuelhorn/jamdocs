@@ -28,6 +28,13 @@ export default {
   },
   mounted() {
     this.$store.commit('closeSidebar')
+    if (process.isClient) {
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('/sw.js')
+          .then(function() { console.log("Service Worker Registered"); });
+      }
+    }
   }
 }
 </script>
