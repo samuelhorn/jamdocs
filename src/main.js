@@ -19,7 +19,7 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   // Load font css
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://use.typekit.net/qfe7lgs.css'
+    href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap'
   })
 
   // State
