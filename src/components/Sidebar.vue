@@ -157,11 +157,11 @@ a {
   margin-bottom: 20px;
   opacity: .3;
   letter-spacing: .15em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .topic {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .sub-topic {

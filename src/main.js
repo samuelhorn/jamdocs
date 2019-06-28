@@ -3,8 +3,6 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import '~/assets/scss/globals.scss'
-import 'prismjs/themes/prism.css'
-import("prismjs/themes/prism-okaidia.css")
 import Vuex from 'vuex'
 require('typeface-source-sans-pro')
 
