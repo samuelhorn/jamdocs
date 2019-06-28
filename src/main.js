@@ -22,6 +22,21 @@ export default function (Vue, { router, head, isClient, appOptions }) {
     href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap'
   })
 
+  head.link.push({
+    rel: 'manifest',
+    href: '/manifest.json'
+  })
+
+  head.meta.push({
+    name: 'theme-color',
+    content: '#10c186'
+  })
+
+  head.meta.push({
+    name: 'apple-mobile-web-app-status-bar-style',
+    content: 'default'
+  })
+
   // State
   appOptions.store = new Vuex.Store({
     state: {

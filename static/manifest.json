@@ -1,0 +1,15 @@
+{
+  "name": "Jamdocs",
+  "short_name": "Jamdocs",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#10c186",
+  "background_color": "#FFF"
+}
