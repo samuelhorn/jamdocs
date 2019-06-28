@@ -6,6 +6,7 @@ import '~/assets/scss/globals.scss'
 import 'prismjs/themes/prism.css'
 import("prismjs/themes/prism-okaidia.css")
 import Vuex from 'vuex'
+require('typeface-source-sans-pro')
 
 export default function (Vue, { router, head, isClient, appOptions }) {
   Vue.use(Vuex)
@@ -15,12 +16,6 @@ export default function (Vue, { router, head, isClient, appOptions }) {
 
   // Add attributes to HTML tag
   head.htmlAttrs = { lang: 'en' }
-
-  // Load font css
-  head.link.push({
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap'
-  })
 
   head.link.push({
     rel: 'manifest',
