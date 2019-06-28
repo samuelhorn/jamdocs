@@ -25,7 +25,9 @@ export default {
   metaInfo() {
     return {
       title: this.$page.doc.title,
-      description: this.$page.doc.description
+      meta: [
+        { key: 'description', name: 'description', content: this.$page.doc.description }
+      ]
     }
   }
 }
