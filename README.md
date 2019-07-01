@@ -4,6 +4,8 @@
 
 The ultimate staic generated documentation theme for the JAM-stack. Highly cusomizable, based on Gridsome, ready to deploy to Netlify in one click.
 
+*Beware, Jamdocs is still in heavy development and will probably cahnge a lot in the near future. And the docs for it is still not written :)*
+
 ## Local installation for development
 1. `git clone https://github.com/samuelhorn/jamdocs project-name`.
 2. `cd project-name`
@@ -13,7 +15,18 @@ The ultimate staic generated documentation theme for the JAM-stack. Highly cusom
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/samuelhorn/jamdocs)
 
 ## Setup & configuration
-See the [demo](https://jamdocs.netlify.com/), which is also the documentation, obviously! :)
+See the [demo](https://jamdocs.netlify.com/), which is also the documentation, obviously! (soon)
+
+## Todos
+1. Write the actual documentation for Jamdocs, in Jamdocs :)
+2. Refabric the code in some places.
+
+## Credits
+- Creds to the [Netlify](https://www.netlify.com/) team for making an awesome all in one hosting soluiton for the JAM-stack.
+- Creds to the [Gridsome](https://gridsome.org/) team for developing a great foundation to build static sites.
+- Creds to [Evan You](https://twitter.com/youyuxi) for making [Vue](https://vuejs.org/).
+- Creds to [Cole Bemis](https://twitter.com/colebemis) for making [feathericons](https://feathericons.com/), my favourite icon set.
+- Creds to [Egoist](https://github.com/egoist), who's not that egoistic. Because he made [vue-feather-icons](https://github.com/egoist/vue-feather-icons).
 
 ## License
 [MIT](https://github.com/samuelhorn/jamdocs/blob/master/LICENSE)
