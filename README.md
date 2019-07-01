@@ -2,7 +2,7 @@
 
 # ![Jamdocs](https://github.com/samuelhorn/jamdocs/blob/master/src/assets/img/logo.svg)
 
-The ultimate staic generated documentation theme for the JAM-stack. Highly cusomizable, based on Gridsome, ready to deploy to Netlify in one click.
+The ultimate staic generated documentation theme for the JAM-stack. Highly cusomizable, based on Gridsome, ready to deploy to Netlify in one click. [DEMO](https://jamdocs.netlify.com/)
 
 *Beware, Jamdocs is still in heavy development and will probably cahnge a lot in the near future. And the docs for it is still not written :)*
 
