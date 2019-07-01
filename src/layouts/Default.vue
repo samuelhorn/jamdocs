@@ -2,7 +2,7 @@
   <div>
     <Header :menuToggle="sidebar" />
     <Sidebar v-if="sidebar" />
-    <main class="main" :class="{'main--has-sidebar': !sidebar, 'main--sidebar-is-open' : this.$store.state.sidebarOpen}">
+    <main class="main" :class="{'main--no-sidebar': !sidebar, 'main--sidebar-is-open' : this.$store.state.sidebarOpen}">
       <slot/>
     </main>
   </div>
@@ -46,8 +46,8 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-  padding: 140px 30px 30px 30px;
-  max-width: 1200px;
+  padding: 100px 30px 30px 30px;
+  max-width: 800px;
   transition: transform .15s ease-in-out;
 
   @include respond-above(sm) {
@@ -60,9 +60,11 @@ export default {
     padding: 100px 80px 30px;
   }
 
-  &--has-sidebar {
+  &--no-sidebar {
     transform: translate(0);
     margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
   }
 
   &--sidebar-is-open {

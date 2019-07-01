@@ -1,20 +1,22 @@
 <template>
   <button @click="toggleSidebar()" class="toggle" aria-label="Toggle the sidebar">
     <transition name="toggle">
-      <svg v-show="!this.$store.state.sidebarOpen" class="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12L21 12M3 6L21 6M3 18L21 18"/>
-      </svg>
+      <menu-icon v-show="!this.$store.state.sidebarOpen" class="open" />
     </transition>
     <transition name="toggle">
-      <svg v-show="this.$store.state.sidebarOpen" class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6L18 18"/>
-      </svg>
+      <x-icon v-show="this.$store.state.sidebarOpen" class="close" />
     </transition>
   </button>
 </template>
 
 <script>
+import { MenuIcon, XIcon } from 'vue-feather-icons'
+
 export default {
+  components: {
+    MenuIcon,
+    XIcon
+  },
   methods: {
     toggleSidebar: function() {
       if (process.isClient) {

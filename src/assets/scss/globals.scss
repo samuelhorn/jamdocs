@@ -55,12 +55,3 @@ h1 {
     font-size: 4rem;
   }
 }
-
-h2 {
-  padding-top: 100px;
-  margin-top: -80px;
-
-  @include respond-above(md) {
-    font-size: 2rem;
-  }
-}

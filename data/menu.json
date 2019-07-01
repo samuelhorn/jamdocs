@@ -16,5 +16,14 @@
         "slug": "theme-configuration"
       }
     ]
+  },
+  {
+    "section": "Deployment",
+    "topics": [
+      {
+        "title": "Deploy to Netlify",
+        "slug": "deploy-to-netlify"
+      }
+    ]
   }
 ]

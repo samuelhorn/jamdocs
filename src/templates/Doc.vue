@@ -39,6 +39,15 @@ export default {
   opacity: .8;
 }
 
+/deep/ > h2 {
+  padding-top: 100px;
+  margin-top: -80px;
+
+  @include respond-above(md) {
+    font-size: 2rem;
+  }
+}
+
 .markdown {
   padding-bottom: 50vh;
 }
