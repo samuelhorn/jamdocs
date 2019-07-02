@@ -43,7 +43,10 @@ export default {
     UploadCloudIcon
   },
   metaInfo: {
-    title: 'The ultimate staic generated documentation theme for the JAM-stack'
+    title: 'The ultimate staic generated documentation theme for the JAM-stack',
+    meta: [
+      { key: 'description', name: 'description', content: 'A theme for static site documentation based on Gridsome, ready to deploy to Netlify in one click.' }
+    ]
   }
 }
 </script>
