@@ -19,7 +19,8 @@ See the [demo](https://jamdocs.netlify.com/), which is also the documentation, o
 
 ## Todos
 1. Write the actual documentation for Jamdocs, in Jamdocs :)
-2. Refabric the code in some places.
+2. Build the homepage better, cividing stuff into components and so on. 
+3. Add search.
 
 ## Credits
 - Creds to the [Netlify](https://www.netlify.com/) team for making an awesome all in one hosting soluiton for the JAM-stack.
@@ -32,6 +33,6 @@ See the [demo](https://jamdocs.netlify.com/), which is also the documentation, o
 [MIT](https://github.com/samuelhorn/jamdocs/blob/master/LICENSE)
 
 ## Finally
-Enjoy Jamdocs, and if you like and use this project, please consider donating since I have put a lot of spare time into this.
+Enjoy Jamdocs, and if you like and use this project commercially, please consider donating since I have put a lot of spare time into this.
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JX3MPJPFVFQCC&currency_code=SEK&source=url)
