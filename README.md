@@ -6,6 +6,11 @@ The ultimate staic generated documentation theme for the JAM-stack. Highly cusom
 
 *Beware, Jamdocs is still in heavy development and will probably cahnge a lot in the near future. And the docs for it is still not written :)*
 
+## Fast by default
+Jamdocs is optimized to be as fast as possible, right now generating 100/100/100/100 score in Google Lighthose. And 100/100 score in Google Page Speed Insights.
+
+![100/100/100/100 Lighthouse scores](https://github.com/samuelhorn/jamdocs/blob/master/src/assets/img/pagespeed.png)
+
 ## Local installation for development
 1. `git clone https://github.com/samuelhorn/jamdocs project-name`.
 2. `cd project-name`
