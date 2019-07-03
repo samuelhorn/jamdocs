@@ -2,7 +2,7 @@
 
 # ![Jamdocs](https://github.com/samuelhorn/jamdocs/blob/master/src/assets/img/logo.svg)
 
-The ultimate staic generated documentation theme for the JAM-stack. Highly cusomizable, based on Gridsome, ready to deploy to Netlify in one click. [DEMO](https://jamdocs.netlify.com/)
+The ultimate static generated documentation theme for the JAM-stack. Highly customizable, based on Gridsome, ready to deploy to Netlify in one click. [DEMO](https://jamdocs.netlify.com/)
 
 *Beware, Jamdocs is still in heavy development and will probably cahnge a lot in the near future. And the docs for it is still not written :)*
 
@@ -24,8 +24,9 @@ See the [demo](https://jamdocs.netlify.com/), which is also the documentation, o
 
 ## Todos
 1. Write the actual documentation for Jamdocs, in Jamdocs :)
-2. Build the homepage better, dividing stuff into components and so on. 
-3. Add search.
+2. Build the homepage better, dividing stuff into components and so on.
+3. Implement Algolia search.
+4. Add a link to this repository from the demo.
 
 ## Credits
 - Creds to the [Netlify](https://www.netlify.com/) team for making an awesome all in one hosting soluiton for the JAM-stack.
