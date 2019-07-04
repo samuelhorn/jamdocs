@@ -147,16 +147,16 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
 
-a {
-  text-decoration: none;
-  color: inherit;
-  padding: 5px 0;
-  display: block;
+  a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 0;
+    display: block;
 
-  &.active {
-    color: $brandPrimary;
+    &.active {
+      color: $brandPrimary;
+    }
   }
 }
 
