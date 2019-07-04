@@ -135,7 +135,8 @@ pre[class*="language-"] {
   .token.tag,
   .token.constant,
   .token.symbol,
-  .token.deleted {
+  .token.deleted,
+  .language-scss .token.variable {
     color: #f92672;
   }
 
