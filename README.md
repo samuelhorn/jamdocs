@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/de44d168-eb1d-47a5-8731-d77bb40af7c8/deploy-status)](https://app.netlify.com/sites/jamdocs/deploys)
 
-# ![Jamdocs](https://github.com/samuelhorn/jamdocs/blob/master/src/assets/img/logo.svg)
+# ![Jamdocs](https://github.com/samuelhorn/jamdocs/blob/master/src/assets/img/logo-dark.svg)
 
 The ultimate static generated documentation theme for the JAM-stack. Highly customizable, based on Gridsome, ready to deploy to Netlify in one click. [DEMO](https://jamdocs.netlify.com/)
 
