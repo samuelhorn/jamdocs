@@ -46,6 +46,27 @@ $textBright: #2a2c2f;
 $brandPrimary: #10c186;
 ```
 
+## Changing font
+Jamdocs uses Source Sans Pro by default. I chose to embed the font in the project to increase page speed. To change the font, you just install another Google Font as a dependency, lets say you want Open Sans:
+
+```bash
+yarn add typeface-open-sans
+```
+
+Then, on line 7 in `src/main.js` you change the line to:
+
+```javascript
+require('typeface-open-sans')
+```
+
+Now you can go to line 12 in `src/assets/scss/globals.scss` and change that line to:
+
+```scss
+font-family: 'Open Sans', sans-serif;
+```
+
+You're done!
+
 ## Edit the sidebar
 
 To edit the sidebar, open the file `data/settings.json`. In this file you will find global theme settings as objects and arrays. The sidebar is edit by adding an sections. A section object looks like this:
