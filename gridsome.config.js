@@ -17,6 +17,7 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Jamdocs',
+  siteUrl: 'https://jamdocs.netlify.com',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -35,6 +36,12 @@ module.exports = {
       use: '@gridsome/plugin-google-analytics',
       options: {
         id: (process.env.GA_ID ? process.env.GA_ID : 'XX-999999999-9')
+      }
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000
       }
     }
   ],
