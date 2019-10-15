@@ -11,7 +11,7 @@ module.exports = function (api) {
 
     const data = require('./data/settings.json');
 
-    const Menu = store.addContentType({typeName: 'Menu'})
+    const Menu = store.addCollection({typeName: 'Menu'})
 
     for(const item of data.sidebar){
     	Menu.addNode({

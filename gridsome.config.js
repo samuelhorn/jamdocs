@@ -18,13 +18,15 @@ function addStyleResource (rule) {
 module.exports = {
   siteName: 'Jamdocs',
   siteUrl: 'https://jamdocs.netlify.com',
+  templates: {
+    Doc: '/:slug',
+  },
   plugins: [
     {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'docs/**/*.md',
         typeName: 'Doc',
-        route: '/:slug',
         remark: {
           plugins: [
             '@gridsome/remark-prismjs'
