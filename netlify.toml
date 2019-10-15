@@ -1,0 +1,5 @@
+[build]
+  command = "gridsome build"
+  publish = "dist"
+[build.environment]
+  NODE_VERSION = "10"
