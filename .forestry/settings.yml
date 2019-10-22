@@ -4,6 +4,11 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: document
+  path: data/settings.json
+  label: Settings
+  match: "**/*"
+  read_only: false
 - type: directory
   path: docs
   label: Docs
