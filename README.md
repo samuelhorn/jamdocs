@@ -20,11 +20,11 @@ Jamdocs is optimized to be as fast as possible, right now generating 100/100/100
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/samuelhorn/jamdocs)
 
 ## Setup & configuration
-See the [demo](https://jamdocs.netlify.com/), which is also the documentation, obviously! (soon)
+See the [demo](https://jamdocs.netlify.com/), which is also the documentation, obviously!
 
 ## Todos
 1. Improve the actual documentation for Jamdocs, in Jamdocs :)
-2. Build the homepage better, dividing stuff into components and so on.
+2. ~~Build the homepage better, dividing stuff into components and so on.~~
 3. Implement Algolia search.
 4. ~~Add a link to this repository from the demo.~~
 
@@ -39,6 +39,4 @@ See the [demo](https://jamdocs.netlify.com/), which is also the documentation, o
 [MIT](https://github.com/samuelhorn/jamdocs/blob/master/LICENSE)
 
 ## Finally
-Enjoy Jamdocs, and if you like and use this project commercially, please consider donating since I have put a lot of spare time into this.
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JX3MPJPFVFQCC&currency_code=SEK&source=url)
+Enjoy Jamdocs, and if you like and use this project commercially, please consider sponsoring on Github since I have put a lot of spare time into this.
