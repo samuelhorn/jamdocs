@@ -3,30 +3,9 @@
     <div class="content">
       <h1>Jamdocs - the ultimate static generated documentation theme for the JAM-stack</h1>
       <nav>
-        <article>
-          <h2>
-            <g-link to="/getting-started">
-              <play-icon />
-              Introduction
-            </g-link>
-          </h2>
-        </article>
-        <article>
-          <h2>
-            <g-link to="/theme-configuration">
-              <sliders-icon />
-              Configuration
-            </g-link>
-          </h2>
-        </article>
-        <article>
-          <h2>
-            <g-link to="/theme-configuration#changing-colors">
-              <eye-icon />
-              Change colors
-            </g-link>
-          </h2>
-        </article>
+        <Shortcut link="/getting-started" text="Introduction" icon="play-icon" />
+        <Shortcut link="/theme-configuration" text="Configuration" icon="sliders-icon" />
+        <Shortcut link="/theme-configuration#changing-colors" text="Change colors" icon="eye-icon" />
       </nav>
       <GitLink class="git" size="large" />
     </div>
@@ -35,15 +14,13 @@
 
 <script>
 import GitLink from '~/components/GitLink.vue'
-import { PlayIcon, SlidersIcon, EyeIcon } from 'vue-feather-icons'
+import Shortcut from '~/components/Shortcut.vue'
 
 export default {
   // Make icons avaliable
   components: {
     GitLink,
-    PlayIcon,
-    SlidersIcon,
-    EyeIcon
+    Shortcut
   },
   metaInfo: {
     title: 'The ultimate static generated documentation theme for the JAM-stack',
@@ -82,45 +59,6 @@ nav {
 
   @include respond-above(sm) {
     flex-direction: row;
-  }
-
-  > * {
-    flex: 1 0;
-    border: 1px solid shade($sidebarBright, 10%);
-    margin: 0 0 1em;
-    background: $sidebarBright;
-    padding: 2rem;
-    border-radius: 3px;
-    transition: background .15s ease-in-out, border-color .15s ease-in-out;
-
-    @include respond-above(sm) {
-      margin: 0 1em 0;
-    }
-
-    .dark & {
-      border: 1px solid shade($sidebarDark, 10%);
-      background: $sidebarDark;
-    }
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-
-svg {
-  width: 2em;
-  height: 2em;
-  margin-bottom: 1em;
-
-  @include respond-above(md) {
-    width: 3em;
-    height: 3em;
   }
 }
 
