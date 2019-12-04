@@ -1,7 +1,7 @@
 <template>
   <Layout :sidebar="false">
     <div class="content">
-      <h1>Jamdocs - the ultimate static generated documentation theme for the JAM-stack</h1>
+      <h1>{{ $static.metadata.siteName }} - {{ this.description }}</h1>
       <nav>
         <!-- To use other icons here, you need to import them in the Shortcut component -->
         <Shortcut link="/getting-started" text="Introduction" icon="play-icon" />
@@ -13,6 +13,14 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+}
+</static-query>
+
 <script>
 import GitLink from '~/components/GitLink.vue'
 import Shortcut from '~/components/Shortcut.vue'
@@ -22,11 +30,18 @@ export default {
     GitLink,
     Shortcut
   },
-  metaInfo: {
-    title: 'The ultimate static generated documentation theme for the JAM-stack',
-    meta: [
-      { key: 'description', name: 'description', content: 'A theme for static site documentation based on Gridsome, ready to deploy to Netlify in one click.' }
-    ]
+  data() {
+    return {
+      description: 'The ultimate static generated documentation theme for the JAM-stack'
+    }
+  },
+  metaInfo() {
+    return {
+      title: this.description,
+      meta: [
+        { key: 'description', name: 'description', content: 'A theme for static site documentation based on Gridsome, ready to deploy to Netlify in one click.' }
+      ]
+    }
   }
 }
 </script>
