@@ -19,6 +19,14 @@ Jamdocs is optimized to be as fast as possible, right now generating 100/100/100
 ## Deploy a copy to netlify
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/samuelhorn/jamdocs)
 
+## Import to Forestry CMS
+
+[![](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=forestryio/jamdocs&engine=other "Import to Forestry")
+
+This project has been pre-configured to work with [Forestry](https://forestry.io). Any changes you make in Forestry will be commited back to your repo. ✨
+
+![Forestry documentation in JAMdocs](static/screenshor-forestry-preview.png)
+
 ## Setup & configuration
 See the [demo](https://jamdocs.netlify.com/), which is also the documentation, obviously!
 
