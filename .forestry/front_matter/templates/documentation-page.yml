@@ -10,7 +10,7 @@ fields:
   label: date
   config:
     date_format: MM/DD/YYYY
-    export_format: YYYY-MM-DD ZZ
+    export_format: YYYY-MM-DD
 - type: text
   name: slug
   label: slug
