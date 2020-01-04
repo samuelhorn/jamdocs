@@ -6,11 +6,11 @@ slug: forestry-cms
 ---
 ## Import starter
 
-[https://github.com/forestryio/jamdocs](https://github.com/forestryio/jamdocs "https://github.com/forestryio/jamdocs")
+[![](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=forestryio/jamdocs&engine=other "Import to Forestry")
 
 ## Start Instant Previews
 
-This starter is pre-configured, but you will need to manually start the preview environement if you want to be able to preview your documents.
+This starter is pre-configured, but you will need to manually start the preview environement if you want to be able to preview your website.
 
 Go to **Settings / Preview** and click on the **Start** button.
 
@@ -32,6 +32,6 @@ You can edit the **Documention Page** front matter template by cliking on **Fron
 
 ## Managing sidebar topics
 
-Click on the **Menu** section in Forestry to add a new section or topics from the user interface. Forestry will write the changes to the JSON file. 🎉 
+Click on the **Menu** section in Forestry to add a new section or topics from the user interface. Forestry will write the changes to the JSON file. 🎉
 
 ![](/forestry-sidebar-settings.png)
