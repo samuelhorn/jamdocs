@@ -1,10 +1,10 @@
 ---
-title: Editing in Forestry
+title: Forestry CMS
 date: 2020-01-03 +0000
-slug: editing-in-forestry
+slug: forestry-cms
 
 ---
-## Import in Forestry
+## Import starter
 
 [https://github.com/forestryio/jamdocs](https://github.com/forestryio/jamdocs "https://github.com/forestryio/jamdocs")
 
