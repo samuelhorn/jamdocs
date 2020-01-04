@@ -16,8 +16,16 @@ Go to **Settings / Preview** and click on the **Start** button.
 
 It will clone your site on Forestry preview environment, install the project dependencies, and launch your npm script to launch `gridsome develop`
 
+![](/forestry-instant-previews.png)
+
 Once the server is started, you will be able to **click on the preview icon** when you're editing a document (even without saving your changes).
 
-## Add a new page
+## Adding pages
 
-Go in the docs section and click **Create** to add a new page to your documentation. The default front matter template contains title, date and slug. You can edit the **Documention Page** front matter template by cliking on **Front Matter** in the sidebar.
+Go in the docs section and click **Create** to add a new page to your documentation. The default front matter template contains `title`, `date` and `slug `fields. You can add new ones by editing the front matter template.
+
+## Front matter
+
+You can edit the **Documention Page** front matter template by cliking on **Front Matter** in the sidebar. From here you can add new fields to enhance the current template.
+
+![](/forestry-front-matter-template.png)
