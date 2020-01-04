@@ -23,6 +23,7 @@ sections:
 - type: document
   path: README.md
   label: README
+  read_only: true
 upload_dir: static
 public_path: ''
 front_matter_path: ''
