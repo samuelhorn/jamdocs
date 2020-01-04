@@ -8,6 +8,9 @@ fields:
 - type: datetime
   name: date
   label: date
+  config:
+    date_format: MM/DD/YYYY
+    export_format: YYYY-MM-DD ZZ
 - type: text
   name: slug
   label: slug
