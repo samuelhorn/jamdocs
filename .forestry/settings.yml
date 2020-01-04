@@ -12,6 +12,8 @@ sections:
   label: Docs
   create: all
   match: "**/*"
+  templates:
+  - documentation-page
 upload_dir: static
 public_path: ''
 front_matter_path: ''
