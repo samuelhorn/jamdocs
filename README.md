@@ -24,7 +24,7 @@ Jamdocs is optimized to be as fast as possible, right now generating 100/100/100
 
 ## Import to Forestry CMS
 
-[![](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=forestryio/jamdocs&engine=other "Import to Forestry")
+[![](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=samuelhorn/jamdocs&engine=other "Import to Forestry")
 
 This project has been pre-configured to work with [Forestry](https://forestry.io). Any changes you make in Forestry will be commited back to your repo. ✨
 
