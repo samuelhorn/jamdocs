@@ -4,23 +4,29 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: document
-  path: data/settings.json
-  label: Menu
+- type: heading
+  label: Content
 - type: directory
   path: docs
   label: Docs
   create: all
   match: "**/*"
-upload_dir: uploads
-public_path: "/uploads"
+  templates:
+  - documentation-page
+- type: heading
+  label: Settings
+- type: document
+  path: data/settings.json
+  label: Menu
+upload_dir: static
+public_path: ''
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
   preview_output_directory: dist
   install_dependencies_command: yarn
-  preview_docker_image: node:10
+  preview_docker_image: node:12
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: gridsome develop
+  instant_preview_command: yarn develop

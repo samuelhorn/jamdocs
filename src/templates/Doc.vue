@@ -47,8 +47,11 @@ export default {
   }
 }
 
+/deep/ > p > img {
+    max-width: 100%;
+  }
+
 .markdown {
   padding-bottom: 50vh;
 }
 </style>
-
