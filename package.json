@@ -17,7 +17,7 @@
     "gridsome-plugin-algolia": "^2.1.1",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.3",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "typeface-source-sans-pro": "^0.0.54",
     "vue-feather-icons": "^4.22.0",
     "vuex": "^3.1.1",
