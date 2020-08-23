@@ -2,7 +2,7 @@
 
 # ![Jamdocs](https://github.com/samuelhorn/jamdocs/blob/master/src/assets/img/logo-dark.svg)
 
-The ultimate static generated documentation theme for the JAM-stack. Highly customizable, based on Gridsome, ready to deploy to Netlify in one click. [DEMO](https://jamdocs.netlify.com/)
+The ultimate static generated documentation theme for the JAM-stack. Highly customizable, based on Gridsome, ready to deploy to Netlify in one click. [DEMO](https://jamdocs.samuelhorn.com/)
 
 _Beware, Jamdocs is still in heavy development and will probably change a lot in the near future. And the docs for it is still not completed._
 
@@ -32,7 +32,7 @@ This project has been pre-configured to work with [Forestry](https://forestry.io
 
 ## Setup & configuration
 
-See the [demo](https://jamdocs.netlify.com/), which is also the documentation, obviously!
+See the [demo](https://jamdocs.samuelhorn.com/), which is also the documentation, obviously!
 
 ## Todos
 
