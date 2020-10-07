@@ -26,7 +26,6 @@ export default {
     setTheme: function() {
       let self = this
       const body = document.querySelector('body')
-      const themeSwitch = document.querySelector('#themeSwitch')
 
       if (process.isClient && localStorage.getItem('theme') === null) {
         localStorage.setItem('theme', 'bright')
