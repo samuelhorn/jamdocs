@@ -38,7 +38,7 @@ export default {
   opacity: .8;
 }
 
-/deep/ > h2 {
+/deep/ > h2, /deep/ > h3, /deep/ > h4, /deep/ > h5, /deep/ > h6 {
   padding-top: 100px;
   margin-top: -80px;
 
